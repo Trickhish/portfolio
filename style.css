@@ -2,6 +2,10 @@
     font-family: quicksand;
     src: url('res/quicksand.ttf');
 }
+@font-face {
+    font-family: montserrat;
+    src: url("res/MontserratVariable.ttf");
+}
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -27,7 +31,8 @@ time, mark, audio, video {
 :root {
     --bg-color: #1a2c33; /* #1a2c33 #073746 #1B222A #f4f4ff */
     /* #245F5B #2F6A61 */
-    --font-color: white;
+    --font-color: #d1caac;
+    --font-color2: #0e2724;
 
     --dec:20rem;
 }
@@ -78,25 +83,50 @@ body {
 }
 
 #navbar {
-    top: 2rem;
-    left: 20%;
-    width: 60%;
+    top: 1.5rem;
+    left: 50%;
+    translate: -50%;
+    width: max-content;
     height: 6vh;
     /*background-color: #ffffff40;*/
     position: fixed;
     backdrop-filter: blur(4px);
-    border-radius: 18px;
+    border-radius: 50rem;
+    padding:0 1.5rem;
 
     box-shadow: none;
-    background: transparent;    
+    background: linear-gradient(112deg, #dedede00 0%, #dedede00 100%);
+    backdrop-filter: none;
     /* #dedede3d #dedede2b */
-    
+    transition: all .2s ease-in-out;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
 }
-#navbar {
+#navbar.active {
     z-index:1000;
     backdrop-filter: blur(30px);
     box-shadow: 0 1px 4px -1px #081615;
-    background: linear-gradient(116.565deg, #dedede3d 0%, #dedede2b 100%);
+    /*background: linear-gradient(112deg, #dedede1c 0%, #dedede1f 100%);*/
+    background: linear-gradient(112deg, #dedede59 0%, #dedede61 100%);
+}
+#navbar button {
+    background: transparent;
+    border: none;
+    color: var(--font-color2);
+    font-size: 1.5rem;
+    cursor: pointer;
+    font-weight: 500;
+}
+#navbar button.active {
+    background-color: #c0d3cc;
+    border-radius: 50rem;
+    padding: 5px 13px;
 }
 
 #main {
@@ -114,4 +144,10 @@ body {
     margin:2rem auto;
     backdrop-filter: blur(4px);
     border-radius: 1.5rem;
+}
+
+#maintitle {
+    font-size: 4rem;
+    color:var(--font-color);
+    font-family: montserrat;
 }

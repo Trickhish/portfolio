@@ -22,6 +22,21 @@ window.addEventListener('load', ()=>{
         //e.style.cx = x;
         //e.style.cy = y;
     });
+
+
+    let observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                console.log("TOP");
+                document.querySelector("#navbar").classList.remove("active");
+            } else {
+                console.log("NOT TOP");
+                document.querySelector("#navbar").classList.add("active");
+            }
+        });
+    }, { threshold: 0.01 });
+    
+    observer.observe(document.querySelector("#toptrigger"));
 });
 
 function randint(min, max) {
@@ -57,3 +72,18 @@ function reload() {
 window.addEventListener("click", ()=>{
     //reload();
 });
+
+
+/*window.addEventListener("scroll", function () {
+    let scrollPosition = window.scrollY;
+    let threshold = 200;
+    let element = document.querySelector(".my-element");
+
+    if (scrollPosition > threshold) {
+        console.log("");
+        element.classList.add("scrolled");
+    } else {
+        element.classList.remove("scrolled");
+    }
+});*/
+
