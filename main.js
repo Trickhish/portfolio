@@ -1,5 +1,59 @@
 
 
 window.addEventListener('load', ()=>{
-    console.log("LOAD");
+    var mx = window.innerWidth;
+    var my = window.innerHeight;
+
+    Array.from(document.querySelectorAll("circle")).forEach((e)=>{
+        var x = randint(0, mx);
+        var y = randint(0, my);
+        //console.log('cx="'+x+'" cy="'+y+'"');
+
+        var dst = 200;
+
+        var anm = e.querySelector("animateTransform");
+        var vls="0,0; 500,500";
+        //var vls="0 "+(x+dst)+" "+(y+dst)+"; 360 "+(x-dst)+" "+(y-dst);
+        //var vls = (x-dst)+","+(y-dst)+"; "+(x+dst)+","+(y-dst)+"; "+(x+dst)+","+(y+dst)+"; "+(x)+","+(y+dst);
+
+        anm.setAttribute("values", vls);
+        anm.setAttribute("type", "transform"); // rotate
+        anm.setAttribute("dur", "3s");
+        //e.style.cx = x;
+        //e.style.cy = y;
+    });
+});
+
+function randint(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function reload() {
+    var mx = window.innerWidth;
+    var my = window.innerHeight;
+
+    Array.from(document.querySelectorAll("circle")).forEach((e)=>{
+        var x = randint(0, mx);
+        var y = randint(0, my);
+        console.log('cx="'+x+'" cy="'+y+'"');
+
+        var dst = 200;
+
+        var anm = e.querySelector("animateTransform");
+        var vls="0,0; 500,500";
+        //var vls="0 "+(x+dst)+" "+(y+dst)+"; 360 "+(x-dst)+" "+(y-dst);
+        //var vls = (x-dst)+","+(y-dst)+"; "+(x+dst)+","+(y-dst)+"; "+(x+dst)+","+(y+dst)+"; "+(x)+","+(y+dst);
+
+        anm.setAttribute("values", vls);
+        anm.setAttribute("type", "transform"); // rotate
+        anm.setAttribute("dur", "3s");
+        e.style.cx = x;
+        e.style.cy = y;
+    });
+}
+
+window.addEventListener("click", ()=>{
+    //reload();
 });
