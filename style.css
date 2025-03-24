@@ -25,8 +25,11 @@ time, mark, audio, video {
 }
 
 :root {
-    --bg-color: #091f27; /* #073746 #1B222A #f4f4ff */
+    --bg-color: #1a2c33; /* #1a2c33 #073746 #1B222A #f4f4ff */
+    /* #245F5B #2F6A61 */
     --font-color: white;
+
+    --dec:20rem;
 }
 
 [data-theme="light"] {
@@ -41,15 +44,18 @@ time, mark, audio, video {
 
 body {
     height: 100dvh;
-    width: 100dvw;
-    background: linear-gradient(168deg, #1B222A 0%, #1f2e47 100%);
+    width: 100%;
+    /*background: linear-gradient(168deg, #1B222A 0%, #1f2e47 100%);*/
     /* background-size: 100% 100% !important; */
     background-attachment: fixed;
 
     background-color: var(--bg-color);
-    background-image: url("res/bg5.jpg");
-    background-size: contain;
-    background-repeat: no-repeat;
+    /*background-image: url("res/bg5.jpg");
+    background-size: 100% 30%;
+    background-repeat: no-repeat;*/
+    margin: 0;
+    padding: 0;
+    padding-top:5rem;
 }
 
 #main_title {
@@ -59,26 +65,53 @@ body {
     font-size:3rem;
 }
 
-#bgvid {
-    width:100dvw;
+#bg {
+    position: fixed;
+    top:0;
+    left:0;
+    margin:0;
+    padding:0;
+    aspect-ratio: 16/9;
+    height:100vh;
+    width: 100vw;
+    z-index: -1;
+}
+
+#navbar {
+    top: 2rem;
+    left: 20%;
+    width: 60%;
+    height: 6vh;
+    /*background-color: #ffffff40;*/
+    position: fixed;
+    backdrop-filter: blur(4px);
+    border-radius: 18px;
+
+    box-shadow: none;
+    background: transparent;    
+    /* #dedede3d #dedede2b */
     
 }
-
-
-#bg_ctn {
-    width:100dvw;
-    height:100dvh;
+#navbar {
+    z-index:1000;
+    backdrop-filter: blur(30px);
+    box-shadow: 0 1px 4px -1px #081615;
+    background: linear-gradient(116.565deg, #dedede3d 0%, #dedede2b 100%);
 }
 
-#bgim {
-    width: 100%;
+#main {
+    margin:0;
+    padding:0;
+    width: 100dvh;
+    height: 200vh;
 }
 
-#bgcl {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top:40%;
-    left:0;
-    background: linear-gradient(180deg, #091f27fa 47%, #091f27 100%);
+.ctn {
+    background-color: #0000002e;
+    height:20rem;
+    width:50%;
+    margin-left: 25%;
+    margin:2rem auto;
+    backdrop-filter: blur(4px);
+    border-radius: 1.5rem;
 }

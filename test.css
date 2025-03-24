@@ -1,0 +1,34 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#visual {
+    margin:0;
+    padding:0;
+    aspect-ratio: 16/9;
+    height:100vh;
+    width: 100vw;
+}
+
+rect {
+    width: 100%;
+    height: 100%;
+}
+
+#navbar {
+    top: 2rem;
+    left: 20%;
+    width: 60%;
+    height: 6vh;
+    /*background-color: #ffffff40;*/
+    position: fixed;
+    backdrop-filter: blur(4px);
+    border-radius: 50rem;
+
+    box-shadow: 0 1px 4px -1px #081615;
+
+    backdrop-filter: blur(30px);
+    /* #dedede3d #dedede2b */
+    background: linear-gradient(116.565deg, #dedede3d 0%, #dedede2b 100%);
+}

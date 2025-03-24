@@ -1,0 +1,48 @@
+<link href="test.css" rel="stylesheet">
+
+<script src="main.js"></script>
+
+<body>
+    <svg id="visual"  > <!-- viewBox="0 0 960" -->
+        <defs>
+            <filter id="blur1" x="-10%" y="-10%" width="120%" height="120%" filterUnits="userSpaceOnUse"
+                color-interpolation-filters="sRGB">
+                <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"></feBlend>
+                <feGaussianBlur stdDeviation="163" result="effect1_foregroundBlur"></feGaussianBlur>
+            </filter>
+        </defs>
+        <rect height="100%" width="100%" fill="#52886E"></rect>
+    
+        <g filter="url(#blur1)">
+            <circle cx="532" cy="485" fill="#164744" r="363">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 10,-10; -10,10; 0,0"
+                    dur="6s" repeatCount="indefinite" />
+            </circle>
+            <circle cx="782" cy="718" fill="#52886E" r="363">
+                <animateTransform attributeName="transform" type="translate" values="0,0; -15,15; 15,-15; 0,0"
+                    dur="6s" repeatCount="indefinite" />
+            </circle>
+            <circle cx="1240" cy="779" fill="#164744" r="363">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 20,-20; -20,20; 0,0"
+                    dur="6s" repeatCount="indefinite" />
+            </circle>
+            <circle cx="78" cy="570" fill="#164744" r="363">
+                <animateTransform attributeName="transform" type="translate" values="0,0; -10,10; 10,-10; 0,0"
+                    dur="6s" repeatCount="indefinite" />
+            </circle>
+            <circle cx="989" cy="602" fill="#52886E" r="363">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 30,-30; -30,30; 0,0"
+                    dur="6s" repeatCount="indefinite" />
+            </circle>
+            <circle cx="1317" cy="928" fill="#164744" r="363">
+                <animateTransform attributeName="transform" type="translate" values="0,0; -25,25; 25,-25; 0,0"
+                    dur="6s" repeatCount="indefinite" />
+            </circle>
+        </g>
+    </svg>
+
+    <div id="navbar">
+
+    </div>
+</body>
