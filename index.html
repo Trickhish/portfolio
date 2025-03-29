@@ -13,71 +13,79 @@
 
     <script src="main.js"></script>
     <body>
-        <svg id="bg"  >
-            <defs>
-                <filter id="blur1" x="-10%" y="-10%" width="120%" height="120%" filterUnits="userSpaceOnUse"
-                    color-interpolation-filters="sRGB">
-                    <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
-                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"></feBlend>
-                    <feGaussianBlur stdDeviation="163" result="effect1_foregroundBlur"></feGaussianBlur>
-                </filter>
-            </defs>
-            <rect height="100%" width="100%" fill="#52886E"></rect>
-        
-            <g filter="url(#blur1)">
-                <circle cx="532" cy="485" fill="#164744" r="363">
-                    <animateTransform attributeName="transform" type="translate" values="0,0; 10,-10; -10,10; 0,0"
-                        dur="6s" repeatCount="indefinite" />
-                </circle>
-                <circle cx="782" cy="718" fill="#52886E" r="363">
-                    <animateTransform attributeName="transform" type="translate" values="0,0; -15,15; 15,-15; 0,0"
-                        dur="6s" repeatCount="indefinite" />
-                </circle>
-                <circle cx="1240" cy="779" fill="#164744" r="363">
-                    <animateTransform attributeName="transform" type="translate" values="0,0; 20,-20; -20,20; 0,0"
-                        dur="6s" repeatCount="indefinite" />
-                </circle>
-                <circle cx="78" cy="570" fill="#164744" r="363">
-                    <animateTransform attributeName="transform" type="translate" values="0,0; -10,10; 10,-10; 0,0"
-                        dur="6s" repeatCount="indefinite" />
-                </circle>
-                <circle cx="989" cy="602" fill="#52886E" r="363">
-                    <animateTransform attributeName="transform" type="translate" values="0,0; 30,-30; -30,30; 0,0"
-                        dur="6s" repeatCount="indefinite" />
-                </circle>
-                <circle cx="1317" cy="928" fill="#164744" r="363">
-                    <animateTransform attributeName="transform" type="translate" values="0,0; -25,25; 25,-25; 0,0"
-                        dur="6s" repeatCount="indefinite" />
-                </circle>
-            </g>
-        </svg>
+        <div id="topgrad"></div>
 
-        <span id="toptrigger"></span>
+        <h2 id="main_title">Charles-Ivan Dury</h2>
+        <nav>
+            <button class="active">Home</button>
+            <button>About</button>
+            <button>Works</button>
+        </nav>
+
+        <section id="home">
+            <div class="hor_cards_ctn">
+                <div class="card_space" style="flex:0.5;"></div>
+
+                <div class="vert_cards_ctn" style="flex:4;">
+                    <div class="card_space" style="flex:2;"></div>
+                    <div id="socials" class="card" style="flex:4;">
+                        <a target="_blank" href="https://lkd.dury.dev">
+                            <svg class="social_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24" fill="currentColor" class="mercado-match" width="24" height="24" focusable="false">
+                                <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path>
+                            </svg>
+                        </a>
+                        
+                        <a target="_blank" href="https://gth.dury.dev">
+                            <svg class="social_icon" width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8C0 11.54 2.29 14.53 5.47 15.59C5.87 15.66 6.02 15.42 6.02 15.21C6.02 15.02 6.01 14.39 6.01 13.72C4 14.09 3.48 13.23 3.32 12.78C3.23 12.55 2.84 11.84 2.5 11.65C2.22 11.5 1.82 11.13 2.49 11.12C3.12 11.11 3.57 11.7 3.72 11.94C4.44 13.15 5.59 12.81 6.05 12.6C6.12 12.08 6.33 11.73 6.56 11.53C4.78 11.33 2.92 10.64 2.92 7.58C2.92 6.71 3.23 5.99 3.74 5.43C3.66 5.23 3.38 4.41 3.82 3.31C3.82 3.31 4.49 3.1 6.02 4.13C6.66 3.95 7.34 3.86 8.02 3.86C8.7 3.86 9.38 3.95 10.02 4.13C11.55 3.09 12.22 3.31 12.22 3.31C12.66 4.41 12.38 5.23 12.3 5.43C12.81 5.99 13.12 6.7 13.12 7.58C13.12 10.65 11.25 11.33 9.47 11.53C9.76 11.78 10.01 12.26 10.01 13.01C10.01 14.08 10 14.94 10 15.21C10 15.42 10.15 15.67 10.55 15.59C13.71 14.53 16 11.53 16 8C16 3.58 12.42 0 8 0Z" transform="scale(64)"/>
+                            </svg>
+                        </a>
     
-        <div id="navbar">
-            <button>Accueil</button>
-            <button>Accueil</button>
-            <button>Accueil</button>
-        </div>
+                        <a target="_blank" href="https://renova.dury.dev">
+                            <svg class="social_icon" viewBox="0 0 256 256" width="256px" height="256px" xmlns="http://www.w3.org/2000/svg">
+                                <g transform="matrix(0.82285, 0, 0, 0.82285, -77.08284, -65.94072)" style="filter: none;">
+                                  <path d="M 119.27 103.032 C 203.936 66.07 327.852 79.659 374.83 103.153 L 375.184 192.395 L 293.336 163.367 L 293.658 138.497 L 341.461 154.627 L 341.91 125.328 C 341.91 125.328 291.774 110.802 243.825 110.939 C 193.499 111.082 152.074 125.224 152.074 125.328 C 152.074 125.538 152.074 183.874 152.074 183.874 L 312.17 249.583 L 311.925 274.775 L 119.199 204.581 L 119.27 103.032 Z"/>
+                                  <path d="M 200.03 283.224 L 200.146 257.849 L 121.124 230.156 L 120.777 295.853 C 142.06 324.309 196.704 377.462 246.74 391.251 C 246.74 391.251 287.265 377.325 318.977 351.212 C 349.627 325.973 374.506 294.249 374.398 294.249 C 374.179 294.249 373.433 218.561 373.433 218.561 L 180.857 146.831 L 181.344 172.362 L 340.121 238.743 L 341.337 283.942 C 320.954 312.732 272.823 350.035 247.724 357.135 C 213.135 347.288 165.423 303.169 152.879 285.395 L 152.652 267.407 L 200.03 283.224 Z"/>
+                                </g>
+                            </svg>
+                        </a>
+    
+                        <a href="mailto:charlesivan.dury@gmx.fr">
+                            <svg class="social_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150" width="150px" height="150px">
+                                <g style="transform-origin: 235.804px -178.937px;" transform="matrix(1, 0, 0, 1, -591.80957, -144.671783)">
+                                  <g>
+                                    <path d="M 593.29 173.763 C 593.305 166.452 599.585 164.017 604.178 163.917 C 604.178 163.917 709.795 164.699 728.704 164.108 C 735.496 163.988 740.83 168.555 740.35 175.408 L 740.213 264.823 C 740.223 272.864 733.947 275.875 728.937 275.957 L 605.963 275.825 C 598.39 275.844 593.301 273.161 593.499 264.894 L 602.535 260.778 L 642.944 219.88 L 602.413 179.622 L 608.78 173.622 L 666.699 230.805 L 724.372 173.499 L 728.535 168.846 L 736.249 175.091 L 731.229 179.499 L 690.821 219.907 L 733.8 262.968 L 729.76 270.438 L 724.494 266.642 L 684.821 226.601 L 670.059 240.824 C 668.603 242.445 666.306 242.394 664.762 241.083 C 663.218 239.772 649.801 226.234 649.801 226.234 L 608.903 266.642 L 731.452 266.77 L 731.471 172.983 L 606.244 173.69 L 593.343 181.157 L 593.29 173.763 Z"/>
+                                  </g>
+                                  <path d="M 593.332 176.401 L 593.527 266.482 L 602.571 264.747 L 602.48 179.196 L 606.035 182.865 L 612.342 177.304 C 612.342 177.304 605.748 170.538 605.691 170.538 C 605.634 170.538 595.371 170.71 595.371 170.71 L 593.332 176.401 Z"/>
+                                </g>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
 
+                <div class="card" style="flex:5;"></div>
 
-        <h2 id="maintitle">Charles-Ivan Dury</h2>
+                <div class="card" id="profile_card" style="flex:3;">
+                    <img src="/res/moi2.png" id="profile"/>
+                </div>
+            </div>
 
+            <div class="hor_cards_ctn">
+                <div class="card" style="flex:4;">
+                    <img src="/res/wood_pattern.png" id="ptlogo"/>
+                </div>
+                <div class="card" style="flex:6;"></div>
+                <div class="card" style="flex:4;">
+                    <img src="/res/tksl.png" id="shlogo"/>
+                </div>
+                
+            </div>
 
-        <div class="ctn">
-
-        </div>
-
-        <div class="ctn">
-            
-        </div>
-
-        <div class="ctn">
-            
-        </div>
-
-        <div class="ctn">
-            
-        </div>
+            <div class="hor_cards_ctn">
+                <div class="card" style="flex:4;"></div>
+                <div class="card" style="flex:4;"></div>
+                <div class="card_space" style="flex:0.5;"></div>
+            </div>
+        </section>
     </body>
 </html>

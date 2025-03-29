@@ -29,10 +29,11 @@ time, mark, audio, video {
 }
 
 :root {
-    --bg-color: #1a2c33; /* #1a2c33 #073746 #1B222A #f4f4ff */
+    --bg-color: #0F0F0F; /* #1a2c33 #073746 #1B222A #f4f4ff */
     /* #245F5B #2F6A61 */
-    --font-color: #d1caac;
+    --font-color: white;
     --font-color2: #0e2724;
+    --des-font-color:#757575;
 
     --dec:20rem;
 }
@@ -60,15 +61,204 @@ body {
     background-repeat: no-repeat;*/
     margin: 0;
     padding: 0;
-    padding-top:5rem;
+
+    color:var(--font-color);
+    font-family: Montserrat;
+}
+
+nav {
+    position: fixed;
+    top:2.5rem;
+    left: 50%;
+    translate: -50% 0;
+    z-index: 1000;
 }
 
 #main_title {
     color:var(--font-color);
     font-family: quicksand;
-    font-weight:auto;
-    font-size:3rem;
+    font-weight:500;
+    font-size:2rem;
+    position: fixed;
+    top:2rem;
+    left:10%;
+    z-index: 1000;
 }
+
+#topgrad {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 6rem;
+    background: linear-gradient(180deg, #0f0f0f 0%, #0f0f0f00 100%);
+    z-index: 999;
+    backdrop-filter: blur(1px);
+}
+
+nav button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.3rem;
+    position: relative;
+
+    color:var(--des-font-color);
+    transition: all .2s ease-in-out;
+    padding: 0;
+    margin:0 8px;
+}
+nav button:hover {
+    color: var(--font-color);
+}
+/*nav button:hover::after {
+    left:0;
+    width:100%;
+}*/
+nav button::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom:0;
+    width:0;
+    height:1px;
+    background-color: white;
+}
+nav button.active {
+    color: var(--font-color);
+}
+nav button.active::after {
+    left:0;
+    width:100%;
+}
+
+
+.hor_cards_ctn {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: center;
+    align-items: stretch;
+    gap:1.3rem;
+    margin:1.3rem auto;
+}
+
+.vert_cards_ctn {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: stretch;
+    justify-content: center;
+    gap:1.3rem;
+}
+
+.vert_cards_ctn .card {
+    aspect-ratio: auto;
+}
+
+.debug {
+    border: dashed 1px red;
+}
+.debug::after {
+    /*content:"";
+    height: 100%;
+    width: 100%;
+    left:0;
+    top:0;
+    position: absolute;
+    border: dashed 2px red;*/
+}
+
+.card_space {
+    /*border: dashed 1px red;*/
+}
+.card {
+    text-align: center;
+    aspect-ratio: 16 / 9;
+    border-radius: 20px;
+    background: linear-gradient(142deg, #1F1F1F 0%, #131313 100%);
+    overflow: hidden;
+    position: relative;
+
+    box-shadow: 0 1px 4px 0px #272727;
+    transition: all .2s ease-in-out;
+
+    /*border: dashed 1px red;*/
+}
+.card:hover {
+    
+}
+
+section {
+    margin-top: 8rem;
+}
+
+#profile_card {
+    flex: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-content: flex-end;
+    align-items: flex-end;
+
+    background-image: url('/res/wp3.jpg');
+    background-size: cover;
+}
+#profile {
+    height: 90%;
+    object-fit: contain;
+    float: right;
+    aspect-ratio: 1 / 1;
+}
+#shlogo {
+    height: 80%;
+    object-fit: contain;
+    float: left;
+    margin-left:0;
+    margin-top:17%;
+}
+#ptlogo {
+    height:100%;
+    width:100%;
+    object-fit: cover;
+}
+
+.social_icon {
+    height:3.4rem;
+    width:3.4rem;
+    fill:white;
+    cursor: pointer;
+    margin:5px;
+    padding:var(--size-incr);
+    transition: all .2s ease-in-out;
+    scale: 0.9;
+
+    --size-incr: 2px;
+}
+.social_icon:hover {
+    scale: 1;
+    /*padding:0;
+    height:calc(3rem + var(--size-incr) * 2);
+    width:calc(3rem + var(--size-incr) * 2);*/
+}
+
+#socials {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-evenly; /* center */
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+
+
+
+
+
 
 #bg {
     position: fixed;

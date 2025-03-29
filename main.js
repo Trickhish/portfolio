@@ -87,3 +87,13 @@ window.addEventListener("click", ()=>{
     }
 });*/
 
+function debug() {
+    var selectors = [".dbgl", ".card"];
+    var els = [];
+
+    els = els.concat(Array.from(document.querySelectorAll(selectors)));
+
+    els.forEach((e)=>{
+        e.classList.toggle("debug");
+    });
+}
