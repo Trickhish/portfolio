@@ -88,7 +88,7 @@ window.addEventListener("click", ()=>{
 });*/
 
 function debug() {
-    var selectors = [".dbgl", ".card"];
+    var selectors = [".dbgl", ".card", ".card_space"];
     var els = [];
 
     els = els.concat(Array.from(document.querySelectorAll(selectors)));
