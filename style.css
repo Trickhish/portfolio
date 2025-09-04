@@ -303,7 +303,7 @@ nav {
 }
 .card {
     text-align: center;
-    aspect-ratio: 16 / 9;
+    /*aspect-ratio: 16 / 9;*/
     border-radius: 20px;
     background: linear-gradient(142deg, #1F1F1F 0%, #131313 100%);
     overflow: hidden;
@@ -539,6 +539,47 @@ section {
     position: relative;
     box-shadow: 0 2px 8px rgba(0,0,0,0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-icon {
+    translate: 50% -50%;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #D4AF37 0%, #B8941F 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(212, 175, 55, 0.3);
+    z-index: 10;
+}
+
+.timeline-item.right .timeline-icon {
+    left: 5px;
+    right: auto;
+    translate: -50% -50%;
+}
+
+.timeline-icon svg {
+    width: 20px;
+    height: 20px;
+    color: #1F1F1F;
+    stroke: #1F1F1F;
+}
+
+.timeline-icon img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+.timeline-icon .big {
+    width: 75%;
+    height: 75%;
 }
 
 .timeline-content:hover {
@@ -958,20 +999,23 @@ section {
 
 /* Card Content Styling */
 .card-content {
-    padding: 1.5rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     overflow: hidden;
     min-width: 0;
     min-height: 0;
+    margin: 1rem;
+    padding: 0;
+    min-height: max-content;
+    gap: .5rem;
 }
 
 .card-content h3 {
     color: var(--font-color);
     font-size: 1.4rem;
     font-weight: 600;
-    margin-bottom: 0.8rem;
+    margin-bottom: 0;
     font-family: montserrat;
     word-wrap: break-word;
     overflow-wrap: break-word;
@@ -981,9 +1025,13 @@ section {
     color: var(--font-color);
     line-height: 1.5;
     font-size: 0.95rem;
-    min-height: 0;
     word-wrap: break-word;
     overflow-wrap: break-word;
+    min-height: max-content;
+    
+    height: max-content;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .card-tags {
@@ -1035,7 +1083,6 @@ section {
 .card-stats {
     display: flex;
     gap: 1.5rem;
-    margin-top: auto;
     justify-content: center;
 }
 

@@ -12,13 +12,15 @@ window.addEventListener('load', ()=>{
         var dst = 200;
 
         var anm = e.querySelector("animateTransform");
-        var vls="0,0; 500,500";
-        //var vls="0 "+(x+dst)+" "+(y+dst)+"; 360 "+(x-dst)+" "+(y-dst);
-        //var vls = (x-dst)+","+(y-dst)+"; "+(x+dst)+","+(y-dst)+"; "+(x+dst)+","+(y+dst)+"; "+(x)+","+(y+dst);
+        if (anm) {
+            var vls="0,0; 500,500";
+            //var vls="0 "+(x+dst)+" "+(y+dst)+"; 360 "+(x-dst)+" "+(y-dst);
+            //var vls = (x-dst)+","+(y-dst)+"; "+(x+dst)+","+(y-dst)+"; "+(x+dst)+","+(y+dst)+"; "+(x)+","+(y+dst);
 
-        anm.setAttribute("values", vls);
-        anm.setAttribute("type", "transform"); // rotate
-        anm.setAttribute("dur", "3s");
+            anm.setAttribute("values", vls);
+            anm.setAttribute("type", "transform"); // rotate
+            anm.setAttribute("dur", "3s");
+        }
         //e.style.cx = x;
         //e.style.cy = y;
     });
@@ -48,6 +50,8 @@ window.addEventListener('load', ()=>{
     initTimelineAnimations();
     // Burger menu
     initBurgerMenu();
+    // Section navigation observer
+    initSectionObserver();
 });
 
 function randint(min, max) {
@@ -68,13 +72,15 @@ function reload() {
         var dst = 200;
 
         var anm = e.querySelector("animateTransform");
-        var vls="0,0; 500,500";
-        //var vls="0 "+(x+dst)+" "+(y+dst)+"; 360 "+(x-dst)+" "+(y-dst);
-        //var vls = (x-dst)+","+(y-dst)+"; "+(x+dst)+","+(y-dst)+"; "+(x+dst)+","+(y+dst)+"; "+(x)+","+(y+dst);
+        if (anm) {
+            var vls="0,0; 500,500";
+            //var vls="0 "+(x+dst)+" "+(y+dst)+"; 360 "+(x-dst)+" "+(y-dst);
+            //var vls = (x-dst)+","+(y-dst)+"; "+(x+dst)+","+(y-dst)+"; "+(x+dst)+","+(y+dst)+"; "+(x)+","+(y+dst);
 
-        anm.setAttribute("values", vls);
-        anm.setAttribute("type", "transform"); // rotate
-        anm.setAttribute("dur", "3s");
+            anm.setAttribute("values", vls);
+            anm.setAttribute("type", "transform"); // rotate
+            anm.setAttribute("dur", "3s");
+        }
         e.style.cx = x;
         e.style.cy = y;
     });
@@ -157,9 +163,27 @@ function initBurgerMenu() {
 
     // Close menu when clicking on a link
     navLinks.forEach(link => {
-        link.addEventListener('click', () => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            
             burgerMenu.classList.remove('active');
             navMenu.classList.remove('active');
+            
+            // Get target section
+            const targetId = link.getAttribute('href').substring(1);
+            const targetSection = document.getElementById(targetId);
+            
+            if (targetSection) {
+                // Calculate scroll position with navbar offset
+                const navbarHeight = 120; // Account for navbar + some padding
+                const targetPosition = targetSection.offsetTop - navbarHeight;
+                
+                // Smooth scroll to position
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
             
             // Update active link
             navLinks.forEach(l => l.classList.remove('active'));
@@ -180,6 +204,60 @@ function initBurgerMenu() {
         if (e.key === 'Escape') {
             burgerMenu.classList.remove('active');
             navMenu.classList.remove('active');
+        }
+    });
+}
+
+// Section observer for active navigation
+function initSectionObserver() {
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-menu a');
+    
+    if (sections.length === 0 || navLinks.length === 0) {
+        return;
+    }
+
+    function updateActiveNavigation() {
+        const scrollY = window.scrollY;
+        let currentSection = '';
+        
+        // Calculate section zones
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 300; // 300px offset for early activation
+            const sectionBottom = sectionTop + section.offsetHeight;
+            
+            if (scrollY >= sectionTop && scrollY < sectionBottom) {
+                currentSection = section.id;
+            }
+        });
+        
+        // If we're at the very top, default to home
+        if (scrollY < 200) {
+            currentSection = 'home';
+        }
+        
+        // Update nav links
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            const href = link.getAttribute('href');
+            if (href === `#${currentSection}`) {
+                link.classList.add('active');
+            }
+        });
+    }
+    
+    // Initial check
+    updateActiveNavigation();
+    
+    // Listen for scroll events
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            requestAnimationFrame(() => {
+                updateActiveNavigation();
+                ticking = false;
+            });
+            ticking = true;
         }
     });
 }
