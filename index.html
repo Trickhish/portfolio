@@ -15,11 +15,19 @@
     <body>
         <div id="topgrad"></div>
 
-        <h2 id="main_title">Charles-Ivan Dury</h2>
+        <h2 id="main_title">Charles-Ivan <span>Dury</span></h2>
         <nav>
-            <button class="active">Home</button>
-            <button>About</button>
-            <button>Works</button>
+            <div class="burger-menu" id="burger-menu">
+                <span class="burger-line"></span>
+                <span class="burger-line"></span>
+                <span class="burger-line"></span>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="active">Home</a>
+                <a href="#about">About</a>
+                <a href="#works">Works</a>
+                <a href="#timeline">Timeline</a>
+            </div>
         </nav>
 
         <section id="home">
@@ -63,28 +71,193 @@
                     </div>
                 </div>
 
-                <div class="card" style="flex:5;"></div>
+                <div class="card" style="flex:5;">
+                    <div class="card-content">
+                        <h3>Featured Project</h3>
+                        <p>A showcase of my latest work featuring modern web technologies and innovative design solutions.</p>
+                        <div class="card-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">TypeScript</span>
+                            <span class="tag">Design</span>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="card" id="profile_card" style="flex:3;">
-                    <img src="/res/moi2.png" id="profile"/>
+                    <img src="/res/moi3.jpg" id="profile"/>
                 </div>
             </div>
 
             <div class="hor_cards_ctn">
                 <div class="card" style="flex:4;">
-                    <img src="/res/wood_pattern.png" id="ptlogo"/>
+                    <div class="card-content">
+                        <h3>Skills & Expertise</h3>
+                        <p>Full-stack development with focus on modern frameworks and clean architecture.</p>
+                        <div class="card-tags">
+                            <span class="tag">Frontend</span>
+                            <span class="tag">Backend</span>
+                            <span class="tag">DevOps</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="card" style="flex:6;"></div>
+                <div class="card" style="flex:6;">
+                    <div class="card-content">
+                        <h3>About Me</h3>
+                        <p>Passionate software engineer with expertise in creating innovative digital solutions. I love turning complex problems into simple, beautiful designs that provide exceptional user experiences.</p>
+                        <div class="card-highlight">
+                            <span>🚀 Innovation Driven</span>
+                        </div>
+                    </div>
+                </div>
                 <div class="card" style="flex:4;">
-                    <img src="/res/tksl.png" id="shlogo"/>
+                    <div class="card-content">
+                        <h3>Experience</h3>
+                        <p>5+ years building scalable applications and leading development teams.</p>
+                        <div class="card-stats">
+                            <div class="stat">
+                                <span class="stat-number">20+</span>
+                                <span class="stat-label">Projects</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">5</span>
+                                <span class="stat-label">Years</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 
             </div>
 
             <div class="hor_cards_ctn">
-                <div class="card" style="flex:4;"></div>
-                <div class="card" style="flex:4;"></div>
+                <div class="card" style="flex:4;">
+                    <div class="card-content">
+                        <h3>Recent Work</h3>
+                        <p>Explore my latest projects and creative endeavors in web development.</p>
+                        <div class="card-cta">
+                            <span class="cta-text">View Portfolio →</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card" style="flex:4;">
+                    <div class="card-content">
+                        <h3>Let's Connect</h3>
+                        <p>Interested in collaboration? Let's discuss your next project.</p>
+                        <div class="card-cta">
+                            <span class="cta-text">Get In Touch →</span>
+                        </div>
+                    </div>
+                </div>
                 <div class="card_space" style="flex:0.5;"></div>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="section-content">
+                <h3>About Me</h3>
+                <p>Coming soon...</p>
+            </div>
+        </section>
+
+        <section id="works">
+            <div class="section-content">
+                <h3>My Works</h3>
+                <p>Coming soon...</p>
+            </div>
+        </section>
+
+        <section id="timeline">
+            <div class="timeline-container">
+                <div class="timeline-line"></div>
+                
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2024</div>
+                        <h4>Senior Software Engineer</h4>
+                        <p class="timeline-company">Tech Company</p>
+                        <p class="timeline-description">Leading development of innovative web applications using modern technologies. Focus on scalable architecture and team collaboration.</p>
+                        <div class="timeline-skills">
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">TypeScript</span>
+                        </div>
+                    </div>
+                    <div class="timeline-marker"></div>
+                </div>
+
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2023</div>
+                        <h4>Full Stack Developer</h4>
+                        <p class="timeline-company">Previous Company</p>
+                        <p class="timeline-description">Developed and maintained multiple client projects. Implemented responsive designs and optimized performance.</p>
+                        <div class="timeline-skills">
+                            <span class="skill-tag">Vue.js</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">PostgreSQL</span>
+                        </div>
+                    </div>
+                    <div class="timeline-marker"></div>
+                </div>
+
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2022</div>
+                        <h4>Portfolio Website</h4>
+                        <p class="timeline-company">Personal Project</p>
+                        <p class="timeline-description">Designed and developed personal portfolio showcasing projects and skills. Focus on clean design and smooth animations.</p>
+                        <div class="timeline-skills">
+                            <span class="skill-tag">HTML/CSS</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">Design</span>
+                        </div>
+                    </div>
+                    <div class="timeline-marker"></div>
+                </div>
+
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2021</div>
+                        <h4>Master's in Computer Science</h4>
+                        <p class="timeline-company">University</p>
+                        <p class="timeline-description">Specialized in software engineering and web technologies. Graduated with distinction.</p>
+                        <div class="timeline-skills">
+                            <span class="skill-tag">Software Engineering</span>
+                            <span class="skill-tag">Algorithms</span>
+                            <span class="skill-tag">Database Design</span>
+                        </div>
+                    </div>
+                    <div class="timeline-marker"></div>
+                </div>
+
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2020</div>
+                        <h4>Junior Developer Internship</h4>
+                        <p class="timeline-company">Startup Company</p>
+                        <p class="timeline-description">First professional experience in web development. Learned modern development practices and agile methodologies.</p>
+                        <div class="timeline-skills">
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">Agile</span>
+                        </div>
+                    </div>
+                    <div class="timeline-marker"></div>
+                </div>
+
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2019</div>
+                        <h4>Bachelor's in Computer Science</h4>
+                        <p class="timeline-company">University</p>
+                        <p class="timeline-description">Foundation in computer science principles, programming, and mathematics.</p>
+                        <div class="timeline-skills">
+                            <span class="skill-tag">C++</span>
+                            <span class="skill-tag">Java</span>
+                            <span class="skill-tag">Mathematics</span>
+                        </div>
+                    </div>
+                    <div class="timeline-marker"></div>
+                </div>
             </div>
         </section>
     </body>
